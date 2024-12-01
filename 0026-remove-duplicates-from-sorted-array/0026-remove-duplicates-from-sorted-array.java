@@ -1,19 +1,19 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            System.out.println("No solution found");
-           return 0;
+        if(nums.length==0||nums == null){
+            System.out.println("no results found");
+            return 0;
         }
-
-        int uniqueIndex = 0; // Pointer to keep track of the last unique element's index.
-
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[uniqueIndex]) {
-                uniqueIndex++;
-                nums[uniqueIndex] = nums[i]; // Move unique element to the next position.
+        int count=0;
+        int n=nums.length;
+        for(int i=1;i<n;i++){
+            if(nums[i]!=nums[count]){
+                count++;
+                nums[count]=nums[i];
             }
+            
         }
-
-        return uniqueIndex + 1; // Return the count of unique elements.
+        return count+1;
+        
     }
 }
